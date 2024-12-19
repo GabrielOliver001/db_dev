@@ -101,7 +101,7 @@ Este repositório inclui um `Dockerfile` para construir uma imagem Docker person
 docker build -t docker-database-manager .
 ```
 
-2. Execute o container: O docker precisa ter comunicação com do Docker Daemon para realizar a criação do container do DB
+2. Execute o container: O container que irá rodar o script precisa ter comunicação com o Docker Daemon para realizar a criação do container do DB
 
 ```bash
 docker run -it -v /var/run/docker.sock:/var/run/docker.sock docker-database-manager:latest criar --banco curso_docker --user docker_usr --pwd docker_pwd --root-pwd root_pwd
