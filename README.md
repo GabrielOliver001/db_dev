@@ -1,12 +1,8 @@
-# Database to Devs
-O Database to Devs é uma ferramenta CLI que cria e gerencia bancos de dados usando Docker.
-O objetivo é ser uma aplicação de demonstração dos recursos do uso do Docker SDK e a interação via programação com o Docker e faz parte dos exemplos da [Formação DevOps](https://www.devopspro.com.br) Pro e do [KubeDev](https://kubedev.io).
-
 ---
 
 # Docker Database Manager
 
-Este repositório fornece um script Python para facilitar a criação, listagem e remoção de bancos de dados PostgreSQL e MySQL(Descomentar código INDEX.PY) em containers Docker para ambientes de desenvolvimento. Há duas formas de executar o script, diretamente na máquina ou usando container.
+Este repositório fornece um script Python para facilitar a criação, listagem e remoção de bancos de dados PostgreSQL e MySQL (Descomentar código INDEX.PY) em containers Docker para ambientes de desenvolvimento. Há duas formas de executar o script, diretamente na máquina ou usando container.
 
 
 ### PRIMEIRA FORMA
