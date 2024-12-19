@@ -84,7 +84,8 @@ python3 index.py remover --id <container_id>
 Substitua `<container_id>` pelo ID do container que deseja remover.
 
 
-###SEGUNDA FORMA
+
+### SEGUNDA FORMA
 ## Dockerfile
 
 Este repositório inclui um `Dockerfile` para construir uma imagem Docker personalizada para rodar o script Python dentro de um container. O `Dockerfile` instala as dependências e configura o ambiente para rodar o script `index.py`.
