@@ -2,7 +2,7 @@
 
 # Docker Database Manager
 
-Este repositório fornece um script Python para facilitar a criação, listagem e remoção de bancos de dados PostgreSQL e MySQL (Descomentar código INDEX.PY) em containers Docker para ambientes de desenvolvimento. Há duas formas de executar o script, diretamente na máquina ou usando container.
+Este repositório fornece um script Python para facilitar a criação, listagem e remoção de bancos de dados PostgreSQL, MySQL e MONGODB. Em containers Docker para ambientes de desenvolvimento. Há duas formas de executar o script, diretamente na máquina ou usando container.
 
 
 
@@ -95,16 +95,23 @@ Este repositório inclui um `Dockerfile` para construir uma imagem Docker person
 
 ### Para construir e rodar o container Docker:
 
-1. Construção da imagem:
+1. Construção da imagem: Alterar o nome do arquivo *INDEX.PY no Dockerfile. 
 
 ```bash
-docker build -t docker-database-manager .
+docker build -t postgre_dev:v1 .
 ```
 
 2. Execute o container: O container que irá rodar o script precisa ter comunicação com o Docker Daemon para realizar a criação do container do DB
 
 ```bash
-docker run -it -v /var/run/docker.sock:/var/run/docker.sock docker-database-manager:latest criar --banco curso_docker --user docker_usr --pwd docker_pwd --root-pwd root_pwd
+MYSQL
+docker run -it -v /var/run/docker.sock:/var/run/docker.sock mysql_dev:v1 criar --banco docker_db --user docker_usr --pwd docker_pwd --root-pwd root_pwd
+
+POSTGRE
+docker run -it -v /var/run/docker.sock:/var/run/docker.sock postegre_dev:v1 criar --banco curso_docker --user docker_usr --pwd docker_pwd --root-pwd root_pwd
+
+MONGODB
+docker run -it -v /var/run/docker.sock:/var/run/docker.sock mongodb_dev:v1 criar --user mongo_usr --root-pwd mongo_pwd
 ```
 
 ## Exemplo de Saída
