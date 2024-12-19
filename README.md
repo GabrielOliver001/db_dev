@@ -16,17 +16,10 @@ Este repositório fornece um script Python para facilitar a criação, listagem 
 - **Python 3.10 ou superior**: O script foi desenvolvido para funcionar com Python 3.10 ou superior.
 - **Virtualenv**: Para criar um ambiente virtual em Python e instalar as dependências de forma isolada.
 
-## Instalação
+## Instalação Virtualenv
 https://virtualenv.pypa.io/en/latest/index.html
 
-### 1. Criação do Ambiente Virtual
-
-Se você ainda não possui o `virtualenv` instalado, instale-o com:
-
-```bash
-pip install virtualenv
-```
-### 2. Instalação da biblioteca Docker:
+### 1. Instalação da biblioteca Docker:
 
 ```bash
 pip install docker
@@ -66,6 +59,14 @@ python3 index.py criar --banco curso_docker --user docker_usr --pwd docker_pwd -
 - `--pwd`: Senha do usuário (ex: `docker_pwd`).
 - `--root-pwd`: Senha do usuário root do banco de dados (ex: `root_pwd`).
 
+![image](https://github.com/user-attachments/assets/c7aa3ed1-2adc-4e36-9437-afc6aa5885e1)
+
+![image](https://github.com/user-attachments/assets/6552598e-9650-45f4-b5dc-7ede4458a972)
+
+![image](https://github.com/user-attachments/assets/fd016348-44bb-4fbb-9ef0-e70406991c95)
+
+
+
 ### 2. Listar bancos de dados
 
 Para listar os bancos de dados criados:
@@ -94,35 +95,28 @@ Este repositório inclui um `Dockerfile` para construir uma imagem Docker person
 
 ### Para construir e rodar o container Docker:
 
-1. Construa a imagem:
+1. Construção da imagem:
 
 ```bash
 docker build -t docker-database-manager .
 ```
 
-2. Execute o container:
+2. Execute o container: O docker precisa ter comunicação com do Docker Daemon para realizar a criação do container do DB
 
 ```bash
-docker run -it docker-database-manager python3 index.py criar --banco curso_docker --user docker_usr --pwd docker_pwd --root-pwd root_pwd
+docker run -it -v /var/run/docker.sock:/var/run/docker.sock docker-database-manager:latest criar --banco curso_docker --user docker_usr --pwd docker_pwd --root-pwd root_pwd
 ```
 
 ## Exemplo de Saída
 
 Após a execução do comando de criação de banco, a saída esperada será algo como:
 
-```bash
-Criando um novo Banco de Dados PostgreSQL.....
-Banco de Dados criado:
----------------------------------
-ID: <container_id>
-Nome do Banco: curso_docker
-Porta de Acesso: 5432
-Usuário: docker_usr
-Senha do Usuário: docker_pwd
----------------------------------
-```
 
-Segue o link da Documentação
+![image](https://github.com/user-attachments/assets/42331798-e65e-4fdc-9e5d-f1019e375e83)
+
+
+
+Segue o link da Documentação:
 https://docker-py.readthedocs.io/en/stable/
 
 
