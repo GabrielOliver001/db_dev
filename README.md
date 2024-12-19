@@ -1,13 +1,15 @@
 # Database to Devs
-O Database to Devs é uma ferramenta CLI que cria e gerencia bancos de dados (Hoje apenas MYSQL) usando Docker.
+O Database to Devs é uma ferramenta CLI que cria e gerencia bancos de dados usando Docker.
 O objetivo é ser uma aplicação de demonstração dos recursos do uso do Docker SDK e a interação via programação com o Docker e faz parte dos exemplos da [Formação DevOps](https://www.devopspro.com.br) Pro e do [KubeDev](https://kubedev.io).
 
 ---
 
 # Docker Database Manager
 
-Este repositório fornece um script Python para facilitar a criação, listagem e remoção de bancos de dados PostgreSQL e MySQL em containers Docker para ambientes de desenvolvimento.
+Este repositório fornece um script Python para facilitar a criação, listagem e remoção de bancos de dados PostgreSQL e MySQL(Descomentar código INDEX.PY) em containers Docker para ambientes de desenvolvimento. Há duas formas de executar o script, diretamente na máquina ou usando container.
 
+
+### PRIMEIRA FORMA
 ## Requisitos
 
 - **Docker**: Certifique-se de que o Docker esteja instalado e em execução em seu sistema. [Clique aqui para instalar o Docker](https://docs.docker.com/get-docker/).
@@ -15,7 +17,7 @@ Este repositório fornece um script Python para facilitar a criação, listagem 
 - **Virtualenv**: Para criar um ambiente virtual em Python e instalar as dependências de forma isolada.
 
 ## Instalação
-
+https://virtualenv.pypa.io/en/latest/index.html
 
 ### 1. Criação do Ambiente Virtual
 
@@ -23,6 +25,11 @@ Se você ainda não possui o `virtualenv` instalado, instale-o com:
 
 ```bash
 pip install virtualenv
+```
+### 2. Instalação da biblioteca Docker:
+
+```bash
+pip install docker
 ```
 
 Crie o ambiente virtual:
@@ -36,14 +43,6 @@ Ative o ambiente virtual:
 ```bash
 source dockerenv/bin/activate  # Para Linux/macOS
 dockerenv\Scripts\activate     # Para Windows
-```
-
-### 2. Instale as dependências
-
-Após ativar o ambiente virtual, instale as dependências necessárias:
-
-```bash
-pip install -r requirements.txt
 ```
 
 ## Utilização
@@ -87,6 +86,8 @@ python3 index.py remover --id <container_id>
 
 Substitua `<container_id>` pelo ID do container que deseja remover.
 
+
+###SEGUNDA FORMA
 ## Dockerfile
 
 Este repositório inclui um `Dockerfile` para construir uma imagem Docker personalizada para rodar o script Python dentro de um container. O `Dockerfile` instala as dependências e configura o ambiente para rodar o script `index.py`.
@@ -121,5 +122,7 @@ Senha do Usuário: docker_pwd
 ---------------------------------
 ```
 
+Segue o link da Documentação
+https://docker-py.readthedocs.io/en/stable/
 
 
