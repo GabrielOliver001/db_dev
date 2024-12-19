@@ -95,10 +95,17 @@ Este repositório inclui um `Dockerfile` para construir uma imagem Docker person
 
 ### Para construir e rodar o container Docker:
 
-1. Construção da imagem: Alterar o nome do arquivo *INDEX.PY no Dockerfile. 
+1. Construção da imagem: Alterar o nome do arquivo *INDEX.PY no Dockerfile para o nome do arquivo do banco que deseja criar.
 
 ```bash
+Dockerfile para Potgre
 docker build -t postgre_dev:v1 .
+
+Dockerfile para Mysql
+docker build -t mysql_dev:v1 .
+
+Dockerfile para MongoDB
+docker build -t mongodb_dev:v1 .
 ```
 
 2. Execute o container: O container que irá rodar o script precisa ter comunicação com o Docker Daemon para realizar a criação do container do DB
