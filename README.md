@@ -5,6 +5,7 @@
 Este repositório fornece um script Python para facilitar a criação, listagem e remoção de bancos de dados PostgreSQL e MySQL (Descomentar código INDEX.PY) em containers Docker para ambientes de desenvolvimento. Há duas formas de executar o script, diretamente na máquina ou usando container.
 
 
+
 ### SCRIPT EXECUTADO DIRETO NA MÁQUINA
 ## Requisitos
 
@@ -82,6 +83,8 @@ python3 index.py remover --id <container_id>
 ```
 
 Substitua `<container_id>` pelo ID do container que deseja remover.
+
+
 
 
 
